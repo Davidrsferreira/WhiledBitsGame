@@ -1,21 +1,18 @@
 package org.academiadecodigo.whiledlings.whiledbits.sound;
 
-import org.academiadecodigo.whiledlings.whiledbits.sound.SoundsGroup;
-
 public enum PathDrums {
+    PAD_E(SoundsGroup.DRUMS.getPath() + "beats/beat1.wav"),
+    PAD_R(SoundsGroup.DRUMS.getPath() + "beats/beat2.wav"),
+    PAD_T(SoundsGroup.DRUMS.getPath() + "beats/beat3.wav"),
+    PAD_Y(SoundsGroup.DRUMS.getPath() + "beats/beat4.wav"),
+    PAD_U(SoundsGroup.DRUMS.getPath() + "beats/beat5.wav"),
+    PAD_D(SoundsGroup.DRUMS.getPath() + "beats/beat6.wav"),
+    PAD_F(SoundsGroup.DRUMS.getPath() + "beats/beat7.wav"),
+    PAD_G(SoundsGroup.DRUMS.getPath() + "beats/beat8.wav"),
+    PAD_H(SoundsGroup.DRUMS.getPath() + "beats/beat9.wav"),
+    PAD_J(SoundsGroup.DRUMS.getPath() + "beats/beat10.wav");
 
-    PAD_0(SoundsGroup.DRUMS.getPath() + "beats/beat1.wav"),
-    PAD_1(SoundsGroup.DRUMS.getPath() + "beats/beat2.wav"),
-    PAD_2(SoundsGroup.DRUMS.getPath() + "beats/beat3.wav"),
-    PAD_3(SoundsGroup.DRUMS.getPath() + "beats/beat4.wav"),
-    PAD_4(SoundsGroup.DRUMS.getPath() + "beats/beat5.wav"),
-    PAD_5(SoundsGroup.DRUMS.getPath() + "beats/beat6.wav"),
-    PAD_6(SoundsGroup.DRUMS.getPath() + "beats/beat7.wav"),
-    PAD_7(SoundsGroup.DRUMS.getPath() + "beats/beat8.wav"),
-    PAD_8(SoundsGroup.DRUMS.getPath() + "beats/beat9.wav"),
-    PAD_9(SoundsGroup.DRUMS.getPath() + "beats/beat10.wav");
-
-    private String path;
+    private final String path;
 
     PathDrums(String path) {
         this.path = path;

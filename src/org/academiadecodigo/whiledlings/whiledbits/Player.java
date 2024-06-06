@@ -4,10 +4,9 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
-import org.academiadecodigo.whiledlings.whiledbits.Game;
 import org.academiadecodigo.whiledlings.whiledbits.menu.MenuHandler;
-import org.academiadecodigo.whiledlings.whiledbits.pads.Pads;
-import org.academiadecodigo.whiledlings.whiledbits.pads.PadsNotes;
+import org.academiadecodigo.whiledlings.whiledbits.controller.Pads;
+import org.academiadecodigo.whiledlings.whiledbits.controller.PadsNotes;
 import org.academiadecodigo.whiledlings.whiledbits.sound.SoundsGroup;
 
 public class Player implements KeyboardHandler {
@@ -194,9 +193,6 @@ public class Player implements KeyboardHandler {
             case KeyboardEvent.KEY_3:
                 game.selectGroup(SoundsGroup.NOTES);
                 break;
-            case KeyboardEvent.KEY_4:
-                game.selectGroup(SoundsGroup.MCS);
-                break;
 
             case KeyboardEvent.KEY_E:
                 game.getSelectedPadGroup().padPressed(0);
@@ -234,7 +230,7 @@ public class Player implements KeyboardHandler {
                 samples.stopAllSongs();
                 menuInstance = true;
                 game.setInMenu();
-                game.startMenu();
+                //game.startMenu();
                 break;
         }
 

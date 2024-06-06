@@ -3,15 +3,16 @@ package org.academiadecodigo.whiledlings.whiledbits.menu;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledlings.whiledbits.Game;
 import org.academiadecodigo.whiledlings.whiledbits.Player;
-import org.academiadecodigo.whiledlings.whiledbits.gfx.GfxMenu;
+import org.academiadecodigo.whiledlings.whiledbits.view.MenuView;
+import org.academiadecodigo.whiledlings.whiledbits.view.MenuOption;
 import org.academiadecodigo.whiledlings.whiledbits.sound.PathNotes;
 import org.academiadecodigo.whiledlings.whiledbits.sound.PathSamples;
 import org.academiadecodigo.whiledlings.whiledbits.sound.SoundMechanism;
 
 public class MenuHandler {
 
-    private GfxMenu gfxMenu;
-    private MenuOptions menuOpsSelected;
+    private MenuView menuView;
+    private MenuOption menuOpsSelected;
     private Game game;
     private Player player;
     private boolean mainMenu;
@@ -19,23 +20,23 @@ public class MenuHandler {
     private boolean menuOption;
     private SoundMechanism sound;
 
-    private SoundMechanism soundArrows = new SoundMechanism(PathNotes.PAD_0.getPath());
-    private SoundMechanism soundConfirm = new SoundMechanism(PathSamples.PAD_7.getPath());
+    private SoundMechanism soundArrows = new SoundMechanism(PathNotes.PAD_E.getPath());
+    private SoundMechanism soundConfirm = new SoundMechanism(PathSamples.PAD_D.getPath());
 
     public MenuHandler(Game game){
         this.game = game;
-        gfxMenu = new GfxMenu();
-        gfxMenu.drawMenu();
-        gfxMenu.selectOps(0);
+        menuView = new MenuView();
+        menuView.draw();
+        //gfxMenu.selectOps(0);
 
         player = new Player(this);
         player.init();
 
         sound = new SoundMechanism("/resources/sounds/introSong.wav");
         sound.setLoop(4);
-        sound.play(true);
+        sound.play();
 
-        menuOpsSelected = MenuOptions.PLAY;
+        menuOpsSelected = MenuOption.PLAY;
         mainMenu = true;
     }
 
@@ -49,11 +50,11 @@ public class MenuHandler {
 
             soundArrows.stop();
             soundArrows = new SoundMechanism(PathNotes.values()[(int) (Math.random() * PathNotes.values().length)].getPath());
-            soundArrows.play(true);
+            soundArrows.play();
 
-            menuOpsSelected = MenuOptions.values()[menuOpsSelected.ordinal() - 1];
-            gfxMenu.selectOps(menuOpsSelected.ordinal());
-            System.out.println(menuOpsSelected.ordinal());
+            menuOpsSelected = MenuOption.values()[menuOpsSelected.ordinal() - 1];
+            //gfxMenu.selectOps(menuOpsSelected.ordinal());
+            //System.out.println(menuOpsSelected.ordinal());
         }
     }
 
@@ -63,14 +64,14 @@ public class MenuHandler {
             return;
         }
 
-        if (menuOpsSelected.ordinal() + 1 < MenuOptions.values().length) {
+        if (menuOpsSelected.ordinal() + 1 < MenuOption.values().length) {
 
             soundArrows.stop();
             soundArrows = new SoundMechanism(PathNotes.values()[(int) (Math.random() * PathNotes.values().length)].getPath());
-            soundArrows.play(true);
+            soundArrows.play();
 
-            menuOpsSelected = MenuOptions.values()[menuOpsSelected.ordinal() + 1];
-            gfxMenu.selectOps(menuOpsSelected.ordinal());
+            menuOpsSelected = MenuOption.values()[menuOpsSelected.ordinal() + 1];
+            //gfxMenu.selectOps(menuOpsSelected.ordinal());
             System.out.println(menuOpsSelected.ordinal());
         }
 
@@ -87,7 +88,7 @@ public class MenuHandler {
             sound.stop();
             soundArrows.stop();
 
-            soundConfirm.play(true);
+            soundConfirm.play();
 
             mainMenu = false;
             player.outMenu();
@@ -97,7 +98,7 @@ public class MenuHandler {
 
         soundArrows.stop();
         soundArrows = new SoundMechanism(PathNotes.values()[(int) (Math.random() * PathNotes.values().length)].getPath());
-        soundArrows.play(true);
+        soundArrows.play();
 
         if (menuOpsSelected.ordinal() == 1) {
             mainMenu = false;
@@ -112,7 +113,6 @@ public class MenuHandler {
             menuOption = true;
             menuOptionImg = new Picture(0, 0, Game.resourcesPathImages + "menu/menuWallKcs.png");
             menuOptionImg.draw();
-            return;
         }
     }
 
@@ -121,7 +121,7 @@ public class MenuHandler {
 
             soundArrows.stop();
             soundArrows = new SoundMechanism(PathNotes.values()[(int) (Math.random() * PathNotes.values().length)].getPath());
-            soundArrows.play(true);
+            soundArrows.play();
 
             mainMenu = true;
             menuOptionImg.delete();

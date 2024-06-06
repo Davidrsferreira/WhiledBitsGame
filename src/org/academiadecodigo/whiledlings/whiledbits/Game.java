@@ -1,16 +1,17 @@
 package org.academiadecodigo.whiledlings.whiledbits;
 
-
-import org.academiadecodigo.whiledlings.whiledbits.gfx.GfxGamePad;
+import org.academiadecodigo.whiledlings.whiledbits.controller.MenuController;
+import org.academiadecodigo.whiledlings.whiledbits.view.GfxGamePad;
 import org.academiadecodigo.whiledlings.whiledbits.menu.MenuHandler;
-import org.academiadecodigo.whiledlings.whiledbits.pads.Pads;
-import org.academiadecodigo.whiledlings.whiledbits.pads.PadsNotes;
-import org.academiadecodigo.whiledlings.whiledbits.pads.PadsSample;
+import org.academiadecodigo.whiledlings.whiledbits.controller.Pads;
+import org.academiadecodigo.whiledlings.whiledbits.controller.PadsNotes;
+import org.academiadecodigo.whiledlings.whiledbits.controller.PadsSample;
 import org.academiadecodigo.whiledlings.whiledbits.sound.SoundsGroup;
 
 
 public class Game {
 
+    private final MenuController controller = new MenuController();
 
     private boolean inMenu = true;
     private MenuHandler menuHandler;
@@ -20,17 +21,15 @@ public class Game {
     private PadsSample drums;
     private PadsNotes samples;
     private PadsNotes notes;
-
-    public void startMenu(){
-        inMenu = true;
-        menuHandler = new MenuHandler(this);
-
-    }
     private PadsNotes mcs;
     private Player player;
-
     public static final int soundLoop = 100;
     public static final String resourcesPathImages = "./resources/images/";
+    public static final String menuPathImages = resourcesPathImages + "menu/";
+
+    public void start() {
+        controller.start();
+    }
 
     public void startPad() {
 
@@ -41,7 +40,7 @@ public class Game {
         drums = new PadsSample(SoundsGroup.DRUMS, gfxGamePad);
         samples = new PadsNotes(SoundsGroup.SAMPLES, gfxGamePad);
         notes = new PadsNotes(SoundsGroup.NOTES, gfxGamePad);
-        mcs = new PadsNotes(SoundsGroup.MCS, gfxGamePad);
+        //mcs = new PadsNotes(SoundsGroup.MCS, gfxGamePad);
 
         selectGroup(SoundsGroup.DRUMS);
 
@@ -70,15 +69,7 @@ public class Game {
                 gfxGamePad.selectNotesGroup();
                 redrawPadsGroupGfx(notes);
                 break;
-            case MCS:
-                selectedPadGroup = mcs;
-                gfxGamePad.selectMcsGroup();
-                redrawPadsGroupGfx(mcs);
-                break;
         }
-
-
-
     }
 
     public Pads getSelectedPadGroup() {
@@ -88,7 +79,6 @@ public class Game {
     private void redrawPadsGroupGfx(Pads pad) {
 
         for (int i=0; i<10; i++) {
-
             if (pad.activePad() != null) {
                 if (pad.activePad()[i]) {
                     gfxGamePad.selectPad(i);
@@ -96,29 +86,10 @@ public class Game {
                 }
                 gfxGamePad.unselectPad(i);
             }
-
         }
-
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public boolean isInMenu() {
-        return inMenu;
     }
 
     public void setInMenu(){
         inMenu = true;
     }
-
-    public MenuHandler getMenuHandler() {
-        return menuHandler;
-    }
-    public GfxGamePad getGfxGamePad() {
-        return gfxGamePad;
-    }
-
-
 }

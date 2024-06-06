@@ -1,18 +1,18 @@
 package org.academiadecodigo.whiledlings.whiledbits.sound;
 
 public enum PathSamples {
-    PAD_0(SoundsGroup.SAMPLES.getPath() + "deathFx.wav"),
-    PAD_1(SoundsGroup.SAMPLES.getPath() + "explosionFx.wav"),
-    PAD_2(SoundsGroup.SAMPLES.getPath() + "gameOverFx.wav"),
-    PAD_3(SoundsGroup.SAMPLES.getPath() + "grigriFx.wav"),
-    PAD_4(SoundsGroup.SAMPLES.getPath() + "gunFx.wav"),
-    PAD_5(SoundsGroup.SAMPLES.getPath() + "orbFx.wav"),
-    PAD_6(SoundsGroup.SAMPLES.getPath() + "powerUpFx.wav"),
-    PAD_7(SoundsGroup.SAMPLES.getPath() + "shinigFx.wav"),
-    PAD_8(SoundsGroup.SAMPLES.getPath() + "sinFx.wav"),
-    PAD_9(SoundsGroup.SAMPLES.getPath() + "teleportFx.wav");
+    PAD_E(SoundsGroup.SAMPLES.getPath() + "batata.wav"),
+    PAD_R(SoundsGroup.SAMPLES.getPath() + "PAD_R.wav"),
+    PAD_T(SoundsGroup.SAMPLES.getPath() + "PAD_T.wav"),
+    PAD_Y(SoundsGroup.SAMPLES.getPath() + "PAD_Y.wav"),
+    PAD_U(SoundsGroup.SAMPLES.getPath() + "PAD_U.wav"),
+    PAD_D(SoundsGroup.SAMPLES.getPath() + "PAD_D.wav"),
+    PAD_F(SoundsGroup.SAMPLES.getPath() + "PAD_F.wav"),
+    PAD_G(SoundsGroup.SAMPLES.getPath() + "PAD_G.wav"),
+    PAD_H(SoundsGroup.SAMPLES.getPath() + "PAD_H.wav"),
+    PAD_J(SoundsGroup.SAMPLES.getPath() + "PAD_J.wav");
 
-    private String path;
+    private final String path;
 
     PathSamples(String path) {
         this.path = path;

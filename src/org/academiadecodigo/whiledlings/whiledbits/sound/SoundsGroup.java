@@ -3,10 +3,9 @@ package org.academiadecodigo.whiledlings.whiledbits.sound;
 public enum SoundsGroup {
     DRUMS("/resources/sounds/padSounds/drums/"),
     SAMPLES("/resources/sounds/padSounds/samples/"),
-    NOTES("/resources/sounds/padSounds/notes/"),
-    MCS("/resources/sounds/padSounds/mcs/");
+    NOTES("/resources/sounds/padSounds/notes/");
 
-    private String path;
+    private final String path;
 
     SoundsGroup(String path) {
         this.path = path;

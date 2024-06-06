@@ -8,56 +8,36 @@ import java.net.URL;
 public class SoundMechanism {
 
     private Clip clip;
-    private URL soundURL;
+    private boolean isOpen = false;
 
     public SoundMechanism(String path) {
         initClip(path);
     }
 
-    /**
-     * Plays the clip from the point it was stopped or from start if passed with the fromStart argument false or true
-     * @param fromStart should be true if want to replay the org.academiadecodigo.whiledlings.whiledbits.sound from the start or false otherwise
-     */
-    public void play(boolean fromStart) {
+    public static SoundMechanism create(String path) {
+        return new SoundMechanism(path);
+    }
 
-        if (fromStart) {
-            clip.setFramePosition(0);
-        }
+    public void play() {
         clip.start();
+        isOpen = true;
     }
 
     public void stop() {
-
+        clip.setFramePosition(0);
         clip.stop();
-    }
-
-    public void close() {
-
-        clip.close();
+        isOpen = false;
     }
 
     public void setLoop(int times) {
         clip.loop(times);
-    }
-
-    public void reOpen() {
-
-        AudioInputStream inputStream = null;
-
-        try {
-
-            inputStream = AudioSystem.getAudioInputStream(soundURL);
-            clip.open(inputStream);
-
-        } catch (LineUnavailableException | IOException | UnsupportedAudioFileException ex) {
-            System.out.println(ex.getMessage());
-        }
+        isOpen = true;
     }
 
     private void initClip(String path) {
 
-        soundURL = SoundMechanism.class.getResource(path); //if loading from jar
-        AudioInputStream inputStream = null;
+        URL soundURL = SoundMechanism.class.getResource(path); //if loading from jar
+        AudioInputStream inputStream;
 
         try {
 
@@ -74,5 +54,9 @@ public class SoundMechanism {
         } catch (UnsupportedAudioFileException | LineUnavailableException | IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    public boolean isOpen() {
+        return isOpen;
     }
 }

@@ -1,18 +1,18 @@
 package org.academiadecodigo.whiledlings.whiledbits.sound;
 
 public enum PathNotes {
-    PAD_0(SoundsGroup.NOTES.getPath() + "note1.wav"),
-    PAD_1(SoundsGroup.NOTES.getPath() + "note2.wav"),
-    PAD_2(SoundsGroup.NOTES.getPath() + "note3.wav"),
-    PAD_3(SoundsGroup.NOTES.getPath() + "note4.wav"),
-    PAD_4(SoundsGroup.NOTES.getPath() + "note5.wav"),
-    PAD_5(SoundsGroup.NOTES.getPath() + "note6.wav"),
-    PAD_6(SoundsGroup.NOTES.getPath() + "note7.wav"),
-    PAD_7(SoundsGroup.NOTES.getPath() + "note8.wav"),
-    PAD_8(SoundsGroup.NOTES.getPath() + "note9.wav"),
-    PAD_9(SoundsGroup.NOTES.getPath() + "note10.wav");
+    PAD_E(SoundsGroup.NOTES.getPath() + "note1.wav"),
+    PAD_R(SoundsGroup.NOTES.getPath() + "note2.wav"),
+    PAD_T(SoundsGroup.NOTES.getPath() + "note3.wav"),
+    PAD_Y(SoundsGroup.NOTES.getPath() + "note4.wav"),
+    PAD_U(SoundsGroup.NOTES.getPath() + "note5.wav"),
+    PAD_D(SoundsGroup.NOTES.getPath() + "note6.wav"),
+    PAD_F(SoundsGroup.NOTES.getPath() + "note7.wav"),
+    PAD_G(SoundsGroup.NOTES.getPath() + "note8.wav"),
+    PAD_H(SoundsGroup.NOTES.getPath() + "note9.wav"),
+    PAD_J(SoundsGroup.NOTES.getPath() + "note10.wav");
 
-    private String path;
+    private final String path;
 
     PathNotes(String path) {
         this.path = path;
