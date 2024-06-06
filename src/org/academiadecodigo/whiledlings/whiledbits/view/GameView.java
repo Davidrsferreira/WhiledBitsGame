@@ -10,7 +10,8 @@ import java.util.Map;
 
 import static org.academiadecodigo.whiledlings.whiledbits.Game.resourcesPathImages;
 import static org.academiadecodigo.whiledlings.whiledbits.utils.PictureUtil.create;
-import static org.academiadecodigo.whiledlings.whiledbits.view.GamePadsOption.*;
+import static org.academiadecodigo.whiledlings.whiledbits.view.GamePadsOption.DRUMS;
+import static org.academiadecodigo.whiledlings.whiledbits.view.GamePadsOption.NOTES;
 
 public class GameView implements BasicView {
 

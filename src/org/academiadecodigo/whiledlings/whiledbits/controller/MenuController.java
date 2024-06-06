@@ -1,9 +1,9 @@
 package org.academiadecodigo.whiledlings.whiledbits.controller;
 
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
-import org.academiadecodigo.whiledlings.whiledbits.view.MenuView;
-import org.academiadecodigo.whiledlings.whiledbits.view.MenuOption;
 import org.academiadecodigo.whiledlings.whiledbits.sound.SoundMechanism;
+import org.academiadecodigo.whiledlings.whiledbits.view.MenuOption;
+import org.academiadecodigo.whiledlings.whiledbits.view.MenuView;
 
 import static org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType.KEY_PRESSED;
 import static org.academiadecodigo.whiledlings.whiledbits.Game.resourcesPathImages;
@@ -60,7 +60,7 @@ public class MenuController extends Controller {
         addKeyListeners();
 
         if (!menuSound.isOpen()) {
-            menuSound.setLoop(4);
+            menuSound.setLoop();
             menuSound.play();
         }
 

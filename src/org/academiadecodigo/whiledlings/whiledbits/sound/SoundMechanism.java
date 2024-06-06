@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
+
 public class SoundMechanism {
 
     private Clip clip;
@@ -29,8 +31,8 @@ public class SoundMechanism {
         isOpen = false;
     }
 
-    public void setLoop(int times) {
-        clip.loop(times);
+    public void setLoop() {
+        clip.loop(LOOP_CONTINUOUSLY);
         isOpen = true;
     }
 

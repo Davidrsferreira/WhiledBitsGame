@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent.*;
-import static org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent.KEY_J;
 import static org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType.KEY_PRESSED;
 
 public abstract class PadsController extends ChildController {

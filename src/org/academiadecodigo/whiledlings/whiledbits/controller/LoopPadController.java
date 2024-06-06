@@ -2,8 +2,6 @@ package org.academiadecodigo.whiledlings.whiledbits.controller;
 
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 
-import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
-
 public abstract class LoopPadController extends PadsController {
 
     protected LoopPadController(Controller parent) {
@@ -19,7 +17,7 @@ public abstract class LoopPadController extends PadsController {
             return;
         }
 
-        sounds.get(keyboardEvent.getKey()).setLoop(LOOP_CONTINUOUSLY);
+        sounds.get(keyboardEvent.getKey()).setLoop();
     }
 
     @Override

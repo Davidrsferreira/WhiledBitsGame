@@ -3,7 +3,7 @@ package org.academiadecodigo.whiledlings.whiledbits.controller;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledlings.whiledbits.view.Pads;
 
-import static org.academiadecodigo.whiledlings.whiledbits.utils.PictureUtil.*;
+import static org.academiadecodigo.whiledlings.whiledbits.utils.PictureUtil.create;
 
 public class Pad {
 

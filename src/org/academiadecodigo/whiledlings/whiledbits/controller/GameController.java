@@ -1,11 +1,11 @@
 package org.academiadecodigo.whiledlings.whiledbits.controller;
 
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.whiledlings.whiledbits.view.GameView;
 
 import static org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType.KEY_PRESSED;
-import static org.academiadecodigo.whiledlings.whiledbits.view.GamePadsOption.*;
+import static org.academiadecodigo.whiledlings.whiledbits.view.GamePadsOption.DRUMS;
+import static org.academiadecodigo.whiledlings.whiledbits.view.GamePadsOption.NOTES;
 
 public class GameController extends ChildController {
 
